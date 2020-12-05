@@ -3,7 +3,7 @@
 # from src import workflows
 
 # from .src import constants
-# # from .data import TFDataTransformer
+# # from .data import TFDataMapper
 # # from .preprocessor import FeatureTypeImputer
 # # from .feature_mapper import NormalizationInputEncoder, CategoricalInputEncoder, StringInputEncoder
 

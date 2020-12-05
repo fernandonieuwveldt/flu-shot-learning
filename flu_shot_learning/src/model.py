@@ -5,7 +5,6 @@ import tensorflow as tf
 from flu_shot_learning.src.constants import NUMERICAL_FEATURES, CATEGORICAL_FEATURES, ALL_FEATURES
 from flu_shot_learning.src.preprocessor import FeatureTypeImputer, FluShotTransformer
 from flu_shot_learning.src.classifier import FluShotClassifier
-from flu_shot_learning.src.utils import encode_input_features
 
 
 class FluShotModel:

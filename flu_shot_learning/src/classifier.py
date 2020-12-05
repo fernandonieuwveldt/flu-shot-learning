@@ -2,8 +2,8 @@
 import tensorflow as tf
 
 # local imports
-from flu_shot_learning.src.data import TFDataTransformer
-from flu_shot_learning.src.utils import encode_input_features
+from flu_shot_learning.src.data import TFDataMapper
+from flu_shot_learning.src.transformer import FeatureTransformer
 
 
 class FluShotClassifier:
@@ -32,9 +32,9 @@ class FluShotClassifier:
         return model
 
     def fit(self, xtrain, ytrain, xval, yval):
-        train_data_set = TFDataTransformer().transform(xtrain, ytrain).batch(self._BATCH_SIZE)
-        val_data_set = TFDataTransformer().transform(xval, yval).batch(self._BATCH_SIZE)
-        all_inputs, encoded_features = encode_input_features(train_data_set)
+        train_data_set = TFDataMapper().transform(xtrain, ytrain).batch(self._BATCH_SIZE)
+        val_data_set = TFDataMapper().transform(xval, yval).batch(self._BATCH_SIZE)
+        all_inputs, encoded_features = FeatureTransformer().transform(train_data_set)
         self.model = self.setup_network(all_inputs, encoded_features)
         self.model.fit(train_data_set, epochs=self._EPOCHS, validation_data=val_data_set)
         return self

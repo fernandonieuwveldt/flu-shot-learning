@@ -6,7 +6,7 @@ import pandas
 import tensorflow as tf
 
 
-class TFDataTransformer:
+class TFDataMapper:
     """Transform pandas data frame to tensorflow data set
     """
     def __init__(self):
